@@ -33,8 +33,8 @@ app.on('ready', () => {
   mainWindow.loadURL(BrowserPageUrl);
   mainWindow.on('close', () => { mainWindow = null });
   
-  protocol.registerFileProtocol('qrn', (request, callback) => {
-    const url = request.url.substr(6);  
+  protocol.registerFileProtocol('xonaki', (request, callback) => {
+    const url = request.url.substr(9);  
     //mainWindow.webContents.send("enable-node", url);    
     callback({ path: path.normalize(`${__dirname}/views/internal/${url}.int.html`) });
   }, (error) => {    

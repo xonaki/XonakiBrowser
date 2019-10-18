@@ -1,5 +1,5 @@
 {
-  "name": "qrn-browser",
+  "name": "XonakiBrowser",
   "version": "0.1.5",
   "description": "A Simple web browser",
   "main": "app.js",
@@ -8,12 +8,12 @@
     "start": "electron .",
     "buildsqlite" : "electron-rebuild -f -w sqlite3",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder",
+    "publish": "electron-builder",
     "deploy": "electron-builder -p always"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/TecRT/Qrn.Browser.git"
+    "url": "https://github.com/xonaki/XonakiBrowser.git"
   },
   "keywords": [
     "Web Browser",
@@ -22,7 +22,7 @@
     "Free web browser",
     "Private browser"
   ],
-  "author": "TecRT",
+  "author": "Xonaki",
   "license": "MIT",
   "dependencies": {
     "bootstrap": "^4.3.1",
@@ -42,7 +42,7 @@
     "knex": "^0.19.3"
   },
   "build": {
-    "appId": "com.tecrt.qrnbrowser",
+    "appId": "com.xonaki.browser",
     "compression": "maximum",
     "asar": true,
     "fileAssociations": [
@@ -87,13 +87,13 @@
     },
     "win": {
       "target": "NSIS",
-      "icon": "resources/qrn.ico"
+      "icon": "resources/app.ico"
     },
     "nsis": {
-      "installerIcon": "resources/qrn.ico",
+      "installerIcon": "resources/app.ico",
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
-      "shortcutName": "QRN Browser"
+      "shortcutName": "Xonaki Browser"
     }
   }
 }

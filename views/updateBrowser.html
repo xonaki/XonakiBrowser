@@ -12,7 +12,7 @@
         const appVersion = window.require('electron').remote.app.getVersion();
     </script>
 
-    Version: <span id="version">-</span>
+    Current Version: <span id="version">-</span>
     <p>New update is ready &nbsp;        
         <button id="ready" onClick="ipcRenderer.send('quitAndInstall')">Update Now</button> &nbsp;        
     </p>

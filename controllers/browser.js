@@ -228,7 +228,7 @@ function Navigation(options) {
 
     $("#settings-nav-item").on("click", function(){        
         
-        NAV.newTab("qrn://settings", {
+        NAV.newTab("xonaki://settings", {
             node: true,            
             showReloadButton: false,
             showForwardButton: false,
@@ -242,7 +242,7 @@ function Navigation(options) {
 
     $("#history-nav-item").on("click", function(){        
         
-        NAV.newTab("qrn://history", {
+        NAV.newTab("xonaki://history", {
             node: true,            
             showReloadButton: false,
             showForwardButton: false,
@@ -340,7 +340,7 @@ function Navigation(options) {
         if (e.keyCode == 13) {
             
             var enableNode = false;
-            if(this.value.match(/^qrn?:\/\/.*/)) {
+            if(this.value.match(/^xonaki?:\/\/.*/)) {
                 console.log("internal page detected");
                 enableNode = true;
             } 
@@ -664,7 +664,7 @@ Navigation.prototype.newTab = function (url, options) {
         $('#nav-body-tabs').append(tab);
     }
     // add webview    
-    let composedWebviewTag = `<webview class="nav-views-view active" data-session="${this.SESSION_ID}" src="${this._purifyUrl(url)}" httpreferrer="https://github.com/tecrt/qrn.browser"`;
+    let composedWebviewTag = `<webview class="nav-views-view active" data-session="${this.SESSION_ID}" src="${this._purifyUrl(url)}" httpreferrer="https://github.com/xonaki/XonakiBrowser.git"`;
     
     composedWebviewTag += ` data-readonly="${((options.readonlyUrl) ? 'true': 'false')}"`;
     if (options.id) {

@@ -1,4 +1,4 @@
-# Qrn.Browser
+# Xonaki Browser
 Simple cross platform web browser.
 
 
