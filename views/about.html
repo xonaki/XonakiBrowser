@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>About QRN Browser</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.css">
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script>let $ = require('jquery');</script>
+    <script>require('popper.js');</script>
+    <script>require('bootstrap');</script>
+    
+    <style>
+    .center-screen {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        min-height: 90vh;
+    }
+    </style>
+</head>
+<body>
+    <script> 
+        const ipcRenderer = require('electron').ipcRenderer;
+        const appVersion = window.require('electron').remote.app.getVersion();
+    </script>
+    <div class="panel panel-primary center-screen">
+        <div class="panel-header">
+            <h3>QRN Browser</h3>
+        </div>
+        <div class="panel-body">
+                <p>
+                    Version: <span id="version">-</span>
+                </p>
+                <p>
+                    A simple opensource cross platform free personal web browser. It is developed using Cromium browser engine. A developer friendly web browser.
+                </p>
+        </div>
+    </div>
+    <script>
+        var container = document.getElementById('version');
+        container.innerHTML = window.require('electron').remote.app.getVersion();
+    </script>
+</body>
+</html>

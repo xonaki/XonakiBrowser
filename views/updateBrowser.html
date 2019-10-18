@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Update Browser</title>
+</head>
+<body>
+    <script> 
+        const ipcRenderer = require('electron').ipcRenderer;
+        const appVersion = window.require('electron').remote.app.getVersion();
+    </script>
+
+    Version: <span id="version">-</span>
+    <p>New update is ready &nbsp;        
+        <button id="ready" onClick="ipcRenderer.send('quitAndInstall')">Update Now</button> &nbsp;        
+    </p>
+    
+    <script>
+        var container = document.getElementById('version');
+        container.innerHTML = window.require('electron').remote.app.getVersion();
+    </script>
+</body>
+</html>

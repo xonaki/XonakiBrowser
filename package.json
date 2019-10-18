@@ -1,0 +1,99 @@
+{
+  "name": "qrn-browser",
+  "version": "0.1.5",
+  "description": "A Simple web browser",
+  "main": "app.js",
+  "scripts": {
+    "postinstall": "electron-builder install-app-deps",
+    "start": "electron .",
+    "buildsqlite" : "electron-rebuild -f -w sqlite3",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "deploy": "electron-builder -p always"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TecRT/Qrn.Browser.git"
+  },
+  "keywords": [
+    "Web Browser",
+    "webview",
+    "Internet Browser",
+    "Free web browser",
+    "Private browser"
+  ],
+  "author": "TecRT",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "color.js": "^0.1.3",
+    "electron-context-menu": "^0.9.1",
+    "electron-updater": "^4.1.2",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.15.0",
+    "sqlite3": "^4.1.0",
+    "url-regex": "^4.1.1",
+    "knex": "^0.19.3"
+  },
+  "devDependencies": {
+    "electron": "^6.0.2",
+    "electron-builder": "^21.2.0",
+    "knex": "^0.19.3"
+  },
+  "build": {
+    "appId": "com.tecrt.qrnbrowser",
+    "compression": "maximum",
+    "asar": true,
+    "fileAssociations": [
+      {
+        "ext": "html",
+        "name": "HTML Files",
+        "role": "Viewer"
+      },
+      {
+        "ext": "htm",
+        "name": "HTM Files",
+        "role": "Viewer"
+      },
+      {
+        "ext": "pdf",
+        "name": "Pdf Files",
+        "role": "Viewer"
+      }
+    ],
+    "mac": {
+      "category": "public.app-free.web-browser"
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "NSIS",
+      "icon": "resources/qrn.ico"
+    },
+    "nsis": {
+      "installerIcon": "resources/qrn.ico",
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "shortcutName": "QRN Browser"
+    }
+  }
+}

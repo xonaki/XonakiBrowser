@@ -1,2 +1,6 @@
-# Xonaki Browser
-Another Cross Platform free web browser. Open source simple fast and free web browser.
+# Qrn.Browser
+Simple cross platform web browser.
+
+
+# Dependencies
+electron-navigation
