@@ -93,7 +93,8 @@
       "installerIcon": "resources/app.ico",
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
-      "shortcutName": "Xonaki Browser"
+      "shortcutName": "Xonaki Browser",
+      "artifactName": "Xonaki-Browser-Setup.exe"
     }
   }
 }
