@@ -24,7 +24,7 @@ module.exports = {
         });
     },
     load_all: function(){
-        return _db.from("history").select("*");
+        return _db.from("history").select("*").orderBy("id","desc");
     },
     save_or_update: function(url){
         
