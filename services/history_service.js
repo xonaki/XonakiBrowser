@@ -29,6 +29,7 @@ module.exports = {
     save_or_update: function(url){
         
         var domain = _util.get_domain_from_url(url);
+        console.log("navigated:", url);
         
         _db("site")
         .where({domain:domain}).then(function(rows){
@@ -60,7 +61,9 @@ module.exports = {
             }
             else{
                 _db("site").insert({domain:domain, zoom:100, status:1}).then(function(site){
-                    _db("history").insert({url:url, site_id:site.id, count:1}).then(function(rsp){            
+                    var siteId = site[0];
+                    console.log(siteId);
+                    _db("history").insert({url:url, site_id:siteId, count:1}).then(function(rsp){            
                         return rsp;
                     });
                 });

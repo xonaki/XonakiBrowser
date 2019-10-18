@@ -1,6 +1,6 @@
 {
   "name": "XonakiBrowser",
-  "version": "0.1.5",
+  "version": "0.1.7",
   "description": "A Simple web browser",
   "main": "app.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "start": "electron .",
     "buildsqlite" : "electron-rebuild -f -w sqlite3",
     "pack": "electron-builder --dir",
-    "publish": "electron-builder",
+    "build": "electron-builder",
     "deploy": "electron-builder -p always"
   },
   "repository": {
