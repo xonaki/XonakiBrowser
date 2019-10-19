@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "electron-builder install-app-deps",
     "start": "electron .",
-    "buildsqlite" : "electron-rebuild -f -w sqlite3",
+    "buildsqlite": "electron-rebuild -f -w sqlite3",
     "pack": "electron-builder --dir",
     "build": "electron-builder",
     "deploy": "electron-builder -p always"
@@ -77,7 +77,8 @@
           "type": "link",
           "path": "/Applications"
         }
-      ]
+      ],
+      "icon": "resources/app.ico"
     },
     "linux": {
       "target": [
