@@ -53,6 +53,7 @@
     "appId": "com.xonaki.browser",
     "compression": "maximum",
     "asar": true,
+    
     "fileAssociations": [
       {
         "ext": "html",
@@ -95,9 +96,16 @@
 
     "linux": {
       "category":"Browser",
-      "target": "deb"
-      
+      "target": "deb",
+      "icon": "resources/app.linux.png",
+      "executableName": "Xonaki Browser"      
     },
+
+    "deb": {
+      "icon": "resources/app.linux.png",      
+      "artifactName":"Xonaki-Browser-Setup-Linux.deb"
+    },
+
     "win": {
       "target": "NSIS",
       "icon": "resources/app.ico"
