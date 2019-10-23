@@ -12,7 +12,8 @@
     "build:linux": "electron-builder -l",
     "build:windows": "electron-builder -w",
     "build:all": "electron-builder -mwl",
-    "deploy": "electron-builder -mwl -p always"
+    "deploy": "electron-builder -p always",
+    "deploy:all": "electron-builder -mwl -p always"
   },
   "repository": {
     "type": "git",
@@ -93,14 +94,23 @@
     },
     "linux": {
       "category": "Browser",
-      "target": "rpm",
+      "target": "appImage",
       "icon": "resources/app.linux.png",
       "executableName": "Xonaki Browser"
+    },
+    "rpm": {
+      "icon": "resources/app.linux.png",
+      "artifactName": "Xonaki-Browser-Setup-Linux.rpm"
     },
     "deb": {
       "icon": "resources/app.linux.png",
       "artifactName": "Xonaki-Browser-Setup-Linux.deb"
     },
+
+    "appImage": { 
+      "artifactName": "Xonaki-Browser-Setup-Linux.appImage"
+    },
+    
     "win": {
       "target": "NSIS",
       "icon": "resources/app.ico"
