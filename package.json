@@ -1,6 +1,6 @@
 {
   "name": "XonakiBrowser",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "A Simple web browser",
   "main": "app.js",
   "scripts": {
@@ -9,8 +9,10 @@
     "buildsqlite": "electron-rebuild -f -w sqlite3",
     "pack": "electron-builder --dir",
     "build": "electron-builder",
-    "build-all": "electron-builder -mwl",
-    "deploy": "electron-builder -p always"
+    "build:linux": "electron-builder -l",
+    "build:windows": "electron-builder -w",
+    "build:all": "electron-builder -mwl",
+    "deploy": "electron-builder -mwl -p always"
   },
   "repository": {
     "type": "git",
@@ -41,12 +43,12 @@
     "popper.js": "^1.15.0",
     "sqlite3": "^4.1.0",
     "url-regex": "^4.1.1",
-    "knex": "^0.19.3"
+    "knex": "^0.19.5"
   },
   "devDependencies": {
     "electron": "^6.0.2",
     "electron-builder": "^21.2.0",
-    "knex": "^0.19.3"
+    "knex": "^0.19.5"
   },
   "build": {
     "appId": "com.xonaki.browser",
@@ -91,7 +93,7 @@
     },
     "linux": {
       "category": "Browser",
-      "target": "deb",
+      "target": "rpm",
       "icon": "resources/app.linux.png",
       "executableName": "Xonaki Browser"
     },
