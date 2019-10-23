@@ -110,12 +110,13 @@
       "target": "NSIS",
       "icon": "resources/app.ico"
     },
+
     "nsis": {
       "installerIcon": "resources/app.ico",
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
       "shortcutName": "Xonaki Browser",
-      "artifactName": "Xonaki-Browser-Setup.exe"
+      "artifactName": "Xonaki-Browser-Setup-Win.exe"
     }
   }
 }
