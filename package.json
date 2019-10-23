@@ -9,6 +9,7 @@
     "buildsqlite": "electron-rebuild -f -w sqlite3",
     "pack": "electron-builder --dir",
     "build": "electron-builder",
+    "build-all": "electron-builder -mwl",
     "deploy": "electron-builder -p always"
   },
   "repository": {
@@ -23,15 +24,13 @@
     "Free web browser",
     "Private browser"
   ],
-
-  "author": { 
-    "name" : "Xonaki",
-    "email" : "xonakibd@gmail.com",
-    "url" : "http://xonaki.com"
+  "author": {
+    "name": "Xonaki",
+    "email": "xonakibd@gmail.com",
+    "url": "http://xonaki.com"
   },
   "email": "xonakibd@gmail.com",
   "license": "MIT",
-
   "dependencies": {
     "bootstrap": "^4.3.1",
     "color.js": "^0.1.3",
@@ -53,7 +52,6 @@
     "appId": "com.xonaki.browser",
     "compression": "maximum",
     "asar": true,
-    
     "fileAssociations": [
       {
         "ext": "html",
@@ -71,13 +69,11 @@
         "role": "Viewer"
       }
     ],
-
     "mac": {
       "category": "public.app-free.web-browser",
-      "target":"dmg",
-      "icon":"resources/app.mac.ico"
+      "target": "dmg",
+      "icon": "resources/app.mac.ico"
     },
-
     "dmg": {
       "contents": [
         {
@@ -91,21 +87,18 @@
           "path": "/Applications"
         }
       ],
-      "artifactName":"Xonaki-Browser-Setup-Mac.dmg"
+      "artifactName": "Xonaki-Browser-Setup-Mac.dmg"
     },
-
     "linux": {
-      "category":"Browser",
+      "category": "Browser",
       "target": "deb",
       "icon": "resources/app.linux.png",
-      "executableName": "Xonaki Browser"      
+      "executableName": "Xonaki Browser"
     },
-
     "deb": {
-      "icon": "resources/app.linux.png",      
-      "artifactName":"Xonaki-Browser-Setup-Linux.deb"
+      "icon": "resources/app.linux.png",
+      "artifactName": "Xonaki-Browser-Setup-Linux.deb"
     },
-
     "win": {
       "target": "NSIS",
       "icon": "resources/app.ico"
