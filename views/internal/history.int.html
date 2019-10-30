@@ -29,6 +29,29 @@
         text-align: center;
         min-height: 90vh;
     }
+
+    #history {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    #history td, #history th {
+        border: 1px solid #ddd;
+        padding: 8px;        
+    }
+
+    #history tr:nth-child(even){background-color: #f2f2f2;}
+
+    #history tr:hover {background-color: #ddd;}
+
+    #history th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        background-color: rgb(80, 80, 80);
+        color: white;
+    }
     </style>
 </head>
 <body>
@@ -53,12 +76,21 @@
                         console.log(historyService);
                         let qb = historyService.load_all();
 
+                        // qb.then(function(rows){
+                        //     $("#settings-container").append("<ul>");                            
+                        //     rows.forEach(element => {
+                        //         $("#settings-container").append("<li><a href='" + element.url + "'>" + element.url + "</a> ( " + element.count + " ) </li>")
+                        //     }); 
+                        //     $("#settings-container").append("</ul>");
+                        // });
+
                         qb.then(function(rows){
-                            $("#settings-container").append("<ul>");                            
+                            $("#settings-container").append("<table  id='history'>");                            
+                            $("#settings-container").append("<tr><td>URL</td><td>Total Visit</td></tr>")
                             rows.forEach(element => {
-                                $("#settings-container").append("<li><a href='" + element.url + "'>" + element.url + "</a> ( " + element.count + " ) </li>")
+                                $("#settings-container").append("<tr><td><a href='" + element.url + "' target='_blank'>" + element.url + "</a></td><td style='text-align: center;'>" + element.count + "</td></tr>")
                             }); 
-                            $("#settings-container").append("</ul>");
+                            $("#settings-container").append("</table>");
                         });
                             
                     </script>
