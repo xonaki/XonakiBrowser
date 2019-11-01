@@ -1,6 +1,6 @@
 {
   "name": "XonakiBrowser",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "A Simple web browser",
   "main": "app.js",
   "scripts": {
@@ -11,9 +11,9 @@
     "build": "electron-builder",
     "build:linux": "electron-builder -l",
     "build:windows": "electron-builder -w",
-    "build:all": "electron-builder -mwl",
+    "build:all": "electron-builder -wl && electron-builder -l deb && electron-builder -l rpm",
     "deploy": "electron-builder -p always",
-    "deploy:all": "electron-builder -mwl -p always"
+    "deploy:all": "electron-builder -wlm -p always && electron-builder -l deb -p always && electron-builder -l rpm -p always"
   },
   "repository": {
     "type": "git",
@@ -41,14 +41,14 @@
     "electron-updater": "^4.1.2",
     "font-awesome": "^4.7.0",
     "jquery": "^3.3.1",
-    "popper.js": "^1.15.0",
+    "knex": "^0.19.5",
+    "popper.js": "^1.16.0",
     "sqlite3": "^4.1.0",
-    "url-regex": "^4.1.1",
-    "knex": "^0.19.5"
+    "url-regex": "^4.1.1"
   },
   "devDependencies": {
-    "electron": "^6.0.2",
-    "electron-builder": "^21.2.0",
+    "electron": "^6.1.0",
+    "electron-builder": "^22.1.0",
     "knex": "^0.19.5"
   },
   "build": {
@@ -106,16 +106,13 @@
       "icon": "resources/app.linux.png",
       "artifactName": "Xonaki-Browser-Setup-Linux.deb"
     },
-
-    "appImage": { 
+    "appImage": {
       "artifactName": "Xonaki-Browser-Setup-Linux.appImage"
     },
-    
     "win": {
       "target": "NSIS",
       "icon": "resources/app.ico"
     },
-
     "nsis": {
       "installerIcon": "resources/app.ico",
       "oneClick": false,
