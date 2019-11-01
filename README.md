@@ -2,7 +2,7 @@
 Simple cross platform web browser. Depends on electron-navigation\ 
 #### Build Status  ![Build Status](https://api.travis-ci.org/xonaki/XonakiBrowser.svg?branch=master) 
 
-### Download
+## Download
 
 Download Xonaki Browser for Windows Linux and Mac seperately
 
@@ -13,5 +13,8 @@ Download Xonaki Browser for Windows Linux and Mac seperately
 | [![Mac](https://raw.githubusercontent.com/xonaki/XonakiBrowser/Development/resources/os/mac.png)](https://github.com/xonaki/XonakiBrowser/releases/latest/download/Xonaki-Browser-Setup-Mac.dmg) Mac | [.dmg](https://github.com/xonaki/XonakiBrowser/releases/latest/download/Xonaki-Browser-Setup-Mac.dmg ".dmg") |
 
 
-# Screenshot
+## Screenshot
 ![xonaki web browser](https://raw.githubusercontent.com/xonaki/XonakiBrowser/master/resources/screenshot-v-0.1.6.png)
+
+## Authors
+S.M. Qumruzzaman Rahmani, Md. Rashidul Hasan, G.M. Nazmul Hossain
