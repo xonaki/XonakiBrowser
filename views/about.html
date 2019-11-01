@@ -39,11 +39,15 @@
                 <p>
                     A simple opensource cross platform free personal web browser. It is developed using Cromium browser engine. A developer friendly web browser.
                 </p>
+                <p><input type="button" value="Close" onclick="CloseWindow()" /> </p>
         </div>
     </div>
     <script>
         var container = document.getElementById('version');
         container.innerHTML = window.require('electron').remote.app.getVersion();
+        function CloseWindow(){
+            window.close();
+        }
     </script>
 </body>
 </html>
