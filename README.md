@@ -16,5 +16,5 @@ Download Xonaki Browser for Windows Linux and Mac seperately
 ## Screenshot
 ![xonaki web browser](https://raw.githubusercontent.com/xonaki/XonakiBrowser/master/resources/screenshot-v-0.1.6.png)
 
-## Authors
+## Contributors
 S.M. Qumruzzaman Rahmani, Md. Rashidul Hasan, G.M. Nazmul Hossain
