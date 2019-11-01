@@ -1,5 +1,5 @@
 # Xonaki Browser
-Simple cross platform web browser. Depends on electron-navigation\ 
+Simple cross platform web browser. Depends on electron-navigation 
 #### Build Status  ![Build Status](https://api.travis-ci.org/xonaki/XonakiBrowser.svg?branch=master) 
 
 ## Download
