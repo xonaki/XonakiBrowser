@@ -10,9 +10,12 @@
     "pack": "electron-builder --dir",
     "build": "electron-builder",
     "build:linux": "electron-builder -l",
-    "build:windows": "electron-builder -w",
+    "build:win": "electron-builder -w",
     "build:all": "electron-builder -wl && electron-builder -l deb && electron-builder -l rpm",
     "deploy": "electron-builder -p always",
+    "deploy:mac": "electron-builder -m -p always",
+    "deploy:win": "electron-builder -w -p always",
+    "deploy:linux": "electron-builder -l deb -p always && electron-builder -l rpm -p always",
     "deploy:all": "electron-builder -wlm -p always && electron-builder -l deb -p always && electron-builder -l rpm -p always"
   },
   "repository": {
@@ -41,17 +44,6 @@
     "electron-updater": "^4.2.0",
     "font-awesome": "^4.7.0",
     "jquery": "^3.3.1",
-<<<<<<< HEAD
-    "knex": "^0.19.5",
-    "popper.js": "^1.16.0",
-    "sqlite3": "^4.1.0",
-    "url-regex": "^4.1.1"
-  },
-  "devDependencies": {
-    "electron": "^6.1.0",
-    "electron-builder": "^22.1.0",
-    "knex": "^0.19.5"
-=======
     "popper.js": "^1.16.0",
     "url-regex": "^4.1.1",
     "knex": "^0.19.5",
@@ -60,7 +52,6 @@
   "devDependencies": {
     "electron-builder": "^22.1.0",
     "electron": "^7.0.0"
->>>>>>> a165c9d90bcd174081c777763bf5c764608ca8e9
   },
   "build": {
     "appId": "com.xonaki.browser",
@@ -105,7 +96,7 @@
     },
     "linux": {
       "category": "Browser",
-      "target": "appImage",
+      "target": "rpm",
       "icon": "resources/app.linux.png",
       "executableName": "Xonaki Browser"
     },
