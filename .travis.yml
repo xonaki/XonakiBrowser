@@ -37,7 +37,7 @@ jobs:
       before_cache:
         - rm -rf $HOME/.cache/electron-builder/wine
     
-        - stage: Deploy Windows      
+    - stage: Deploy Windows      
       os: windows      
       script:                
         - npm run deploy:win      
