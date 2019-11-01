@@ -1,11 +1,10 @@
-sudo: false
+sudo: true
 
 language: node_js
 node_js: "12.10.0"
 
 before_install:
   - #cd XonakiBrowser
-  - ls
 
 cache:
   directories:
@@ -22,11 +21,19 @@ env:
 
 jobs:
   include:
-    - stage: Deploy Windows, Linux & Mac
+    - stage: Deploy Mac
       os: osx
-      osx_image: xcode10.1
+      osx_image: xcode11.2
       script:
-        - npm run deploy:all
-        - npm run deploy:linux
+        - npm run deploy:mac
       before_cache:
         - rm -rf $HOME/.cache/electron-builder/wine
+    - stage: Deploy Windows      
+      os: windows      
+      script:                
+        - npm run deploy:win    
+    - stage: Deploy Linux      
+      os: linux   
+      dist: bionic   
+      script:                
+        - npm run deploy:linux    
