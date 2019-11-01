@@ -22,7 +22,6 @@ env:
 jobs:
   include:
     - stage: Deploy Windows, Linux & Mac
-      if: tag IS present
       os: osx
       osx_image: xcode10.1
       script:
