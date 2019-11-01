@@ -5,6 +5,8 @@ node_js: "12.10.0"
 
 before_install:
   - #cd XonakiBrowser
+install:
+  - if [ $TRAVIS_OS_NAME = linux ]; then sudo apt-get install rpm ; fi
 
 cache:
   directories:
@@ -20,7 +22,13 @@ env:
     - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
 
 jobs:
-  include:
+  include:   
+    - stage: Deploy Linux      
+      os: linux   
+      dist: bionic   
+      script:                
+        - npm run deploy:linux
+
     - stage: Deploy Mac
       os: osx
       osx_image: xcode11.2
@@ -28,12 +36,8 @@ jobs:
         - npm run deploy:mac
       before_cache:
         - rm -rf $HOME/.cache/electron-builder/wine
-    - stage: Deploy Windows      
+    
+        - stage: Deploy Windows      
       os: windows      
       script:                
-        - npm run deploy:win    
-    - stage: Deploy Linux      
-      os: linux   
-      dist: bionic   
-      script:                
-        - npm run deploy:linux    
+        - npm run deploy:win      
