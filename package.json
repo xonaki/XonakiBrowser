@@ -1,6 +1,6 @@
 {
   "name": "XonakiBrowser",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "A Simple web browser",
   "main": "app.js",
   "scripts": {
