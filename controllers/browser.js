@@ -208,8 +208,7 @@ function Navigation(options) {
     // switch active view and tab on click
     //
 
-    $("#goImgBtn").on("click", function(){
-        $('#nav-ctrls-url').focus();
+    $("#goImgBtn").on("click", function(){        
         NAV.changeTab($("#nav-ctrls-url").val());
     });
 
@@ -359,7 +358,7 @@ function Navigation(options) {
                 });
             } else {
                 
-                if ($('.nav-tabs-tab').length && enableNode == false) {                                        
+                if ($('.nav-tabs-tab').length && enableNode == false) {                                                            
                     NAV.changeTab(this.value);
                 } else {
                     NAV.newTab(this.value, {
