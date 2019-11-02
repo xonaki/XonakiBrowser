@@ -12,13 +12,16 @@
   <script>let $ = require('jquery');</script>
   <script>require('popper.js');</script>
   <script>require('bootstrap');</script>
+  <script src="../lib/3rd party/bootstrap3-typeahead.min.js"></script>
 
   <!-- <script src="../themes/bootstrap/js/bootstrap.bundle.min.js"></script> -->
   <!-- Settings Menu-->
 
   <style>
+    .typeahead { z-index: 1051; }
     .dropdown-submenu {
       position: relative;
+      z-index: 1100;
     }
 
     .dropdown-submenu a::after {
@@ -62,7 +65,8 @@
     /* development */
     const enav = new (require('../controllers/browser.js'))();
 
-    const ipcRenderer = require('electron').ipcRenderer; 
+    const electron = require('electron'); 
+    const ipcRenderer = electron.ipcRenderer; 
     ipcRenderer.on('updateReady', function(event, text) { 
       
       console.log("Update is ready to install");
@@ -77,6 +81,8 @@
 
     });
  
+    electron.ipcRenderer.send('update-history-cache');
+
     const navDefaultURL = "https://www.google.com/";
 
     enav.newTab(navDefaultURL, {
@@ -244,7 +250,27 @@
     $('#browserMainMenu').mouseleave(function() { 
       $(this).removeClass("show");
     });
- 
+  
+    $(document).ready(function(){
+        
+      var data = ["https://prothomalo.com","https://google.com", "https://youtube.com", "https://gmail.com", "https://facebook.com", "https://twitter.com"];
+
+      var historyData = electron.remote.getGlobal('historyUrls');
+      if(historyData != null){
+        data = historyData;
+      }
+
+      $(".typeahead").typeahead({ 
+        source : data, 
+        minLength: 2,
+        items: 10,
+        appendTo: "#nav-body-ctrls",
+        displayText : function(item){
+          return item.url;
+        },
+      });
+      
+    });
   </script>
   <!--
       This HTML file is a template.

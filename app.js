@@ -43,10 +43,16 @@ app.on('ready', () => {
     }    
   });
   
+  Common.loadGlobalCache(db);
+
 });
 
 ipcMain.on('close-me', (evt, arg) => {
-  app.quit()
+  app.quit();
+});
+
+ipcMain.on('update-history-cache', (evt, arg) => {
+  Common.loadGlobalCache(db);
 });
 
 setInterval(() => {

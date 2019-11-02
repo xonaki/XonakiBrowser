@@ -118,7 +118,7 @@ function Navigation(options) {
         $('#nav-body-ctrls').append('<i id="nav-ctrls-reload" class="nav-icons disabled" title="Reload page">' + this.SVG_RELOAD + '</i>');
     }
     if (options.showUrlBar) {
-        $('#nav-body-ctrls').append('<input id="nav-ctrls-url" type="text" title="Enter an address or search term" style="margin-right:10px; border-radius: 7px;" />')
+        $('#nav-body-ctrls').append('<input class="typeahead" id="nav-ctrls-url" type="text" data-provide="typeahead" title="Enter an address or search term" style="margin-right:10px; border-radius: 7px;" />');        
     }
     
     $('#nav-body-ctrls').append(
@@ -690,6 +690,8 @@ Navigation.prototype.newTab = function (url, options) {
         options.postTabOpenCallback(newWebview)
     }
     (this.changeTabCallback || (() => {}))(newWebview);
+    electron.ipcRenderer.send('update-history-cache');
+    
     return newWebview;
 
 } //:newTab()
