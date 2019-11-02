@@ -253,7 +253,7 @@
   
     $(document).ready(function(){
         
-      var data = ["https://prothomalo.com","https://google.com", "https://youtube.com", "https://gmail.com", "https://facebook.com", "https://twitter.com"];
+      var data = ["http://xonaki.com","https://google.com", "https://youtube.com", "https://gmail.com", "https://facebook.com", "https://twitter.com"];
 
       var historyData = electron.remote.getGlobal('historyUrls');
       if(historyData != null){
@@ -265,6 +265,7 @@
         minLength: 2,
         items: 10,
         appendTo: "#nav-body-ctrls",
+        autoSelect: false,        
         displayText : function(item){
           return item.url;
         },

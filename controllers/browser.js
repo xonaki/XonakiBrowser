@@ -118,7 +118,7 @@ function Navigation(options) {
         $('#nav-body-ctrls').append('<i id="nav-ctrls-reload" class="nav-icons disabled" title="Reload page">' + this.SVG_RELOAD + '</i>');
     }
     if (options.showUrlBar) {
-        $('#nav-body-ctrls').append('<input class="typeahead" id="nav-ctrls-url" type="text" data-provide="typeahead" title="Enter an address or search term" style="margin-right:10px; border-radius: 7px;" />');        
+        $('#nav-body-ctrls').append('<input class="typeahead" id="nav-ctrls-url" type="text" data-provide="typeahead" title="Enter an address or search term" style="margin-right:2px; border-radius: 7px;" /><img id="goImgBtn" src="../resources/go.png" style="margin-right:10px;" />');
     }
     
     $('#nav-body-ctrls').append(
@@ -207,6 +207,11 @@ function Navigation(options) {
     //
     // switch active view and tab on click
     //
+
+    $("#goImgBtn").on("click", function(){
+        $('#nav-ctrls-url').focus();
+        NAV.changeTab($("#nav-ctrls-url").val());
+    });
 
     $("#about-nav-item").on("click", function(){ 
         electron.ipcRenderer.send('show-about-window');
@@ -690,6 +695,7 @@ Navigation.prototype.newTab = function (url, options) {
         options.postTabOpenCallback(newWebview)
     }
     (this.changeTabCallback || (() => {}))(newWebview);
+    
     electron.ipcRenderer.send('update-history-cache');
     
     return newWebview;
