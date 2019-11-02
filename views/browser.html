@@ -12,8 +12,10 @@
   <script>let $ = require('jquery');</script>
   <script>require('popper.js');</script>
   <script>require('bootstrap');</script>
+
   <!-- <script src="../themes/bootstrap/js/bootstrap.bundle.min.js"></script> -->
   <!-- Settings Menu-->
+
   <style>
     .dropdown-submenu {
       position: relative;
@@ -52,7 +54,8 @@
       <div id="nav-body-views"></div>
     </div>
   </div>
-  <script>
+  <script> 
+    
     /* production */
     // const enav = new (require('electron-navigation'))()
 
@@ -222,9 +225,11 @@
     /* Settings Menu */
 
     $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
+
       if (!$(this).next().hasClass('show')) {
         $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
       }
+
       var $subMenu = $(this).next(".dropdown-menu");
       $subMenu.toggleClass('show');
 
@@ -235,6 +240,11 @@
 
       return false;
     });
+ 
+    $('#browserMainMenu').mouseleave(function() { 
+      $(this).removeClass("show");
+    });
+ 
   </script>
   <!--
       This HTML file is a template.

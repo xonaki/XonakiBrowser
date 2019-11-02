@@ -44,7 +44,7 @@ function Navigation(options) {
         verticalTabs: false,
         defaultFavicons: false,
         newTabCallback: null,
-        changeTabCallback: null,
+        changeTabCallback: null, 
         newTabParams: null,
         readonlyUrl:false,
         showControlBox: true
@@ -125,7 +125,7 @@ function Navigation(options) {
     '<a href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'+
         '<i class="fa fa-bars"></i>'+
     '</a>'+
-    '<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">'+
+    '<ul id="browserMainMenu" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">'+
         '<li><a id="newTab-nav-item" class="dropdown-item" href="#">New Tab</a></li>'+
         '<li><a class="dropdown-item" href="#">New Window</a></li>'+
         '<li><a class="dropdown-item" href="#">New Private Window</a></li>'+
@@ -476,7 +476,8 @@ function Navigation(options) {
                         save: 'Save',
                         copyLink: 'Copy Link',
                         inspect: 'Inspect',
-                        search: 'Search'
+                        search: 'Search',
+                        print: 'Print'
                     }
                 });
             };
@@ -671,7 +672,7 @@ Navigation.prototype.newTab = function (url, options) {
         composedWebviewTag += ` id=${options.id}`;
     }
     if (options.node) {
-        composedWebviewTag += " nodeintegration";
+        composedWebviewTag += " nodeintegration ";
     }
     if (options.webviewAttributes) {
         Object.keys(options.webviewAttributes).forEach((key) => {
